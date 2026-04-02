@@ -20,16 +20,36 @@ navLinks.querySelectorAll('a').forEach(link => {
 const sections = document.querySelectorAll('section[id]');
 const navItems = document.querySelectorAll('.nav-links a');
 
-const observer = new IntersectionObserver(entries => {
+const activeObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       navItems.forEach(a => {
         a.style.color = a.getAttribute('href') === '#' + entry.target.id
-          ? '#93c5fd'
+          ? 'rgba(255,255,255,0.95)'
           : '';
       });
     }
   });
 }, { rootMargin: '-40% 0px -55% 0px' });
 
-sections.forEach(s => observer.observe(s));
+sections.forEach(s => activeObserver.observe(s));
+
+// Scroll-reveal animation
+const revealElements = document.querySelectorAll(
+  '.tl-item, .pub-item, .teaching-card, .skill-group, .info-card, .honor-item'
+);
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      // Stagger siblings slightly
+      const siblings = Array.from(entry.target.parentElement.children);
+      const index = siblings.indexOf(entry.target);
+      entry.target.style.transitionDelay = `${index * 60}ms`;
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { rootMargin: '0px 0px -60px 0px', threshold: 0.1 });
+
+revealElements.forEach(el => revealObserver.observe(el));
