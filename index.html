@@ -1,153 +1,418 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Your Name - Engineering Student Portfolio. Projects in [your specialties].">
-    <meta name="keywords" content="Your Name, engineering, portfolio, [your university]">
-    <title>Your Name | Engineering Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Zhaosen Qu — Electrical Engineering &amp; Materials Science student at Johns Hopkins University. Researcher in semiconductor nanofabrication, thin-film materials, and photonics. Incoming ORNL RSI intern, summer 2026.">
+  <meta name="keywords" content="Zhaosen Qu, Johns Hopkins, ORNL, semiconductor, nanofabrication, materials science, electrical engineering, ferroelectric, AlN, AlScN">
+  <meta property="og:title" content="Zhaosen Qu">
+  <meta property="og:description" content="EE &amp; MSE student at Johns Hopkins University. Researcher in semiconductor devices and thin-film materials.">
+  <title>Zhaosen Qu</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="nav-container">
-                <h1 class="logo">Your Name</h1>
-                <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
 
-    <section id="hero">
-        <div class="hero-content">
-            <h2>Hi, I'm Your Name</h2>
-            <p class="subtitle">Sophomore Engineering Student | [Your Major]</p>
-            <p>[University Name] | Expected Graduation: [Year]</p>
-            <div class="cta-buttons">
-                <a href="#projects" class="btn btn-primary">View My Work</a>
-                <a href="#contact" class="btn btn-secondary">Get in Touch</a>
-            </div>
+  <!-- ─── Navigation ─────────────────────────────────────────────────────── -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a class="nav-logo" href="#hero">Zhaosen Qu</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#teaching">Teaching</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ─── Hero ───────────────────────────────────────────────────────────── -->
+  <section id="hero">
+    <div class="hero-inner">
+      <div class="hero-photo-wrap">
+        <img src="assets/profile.jpg" alt="Zhaosen Qu" class="hero-photo"
+             onerror="this.style.display='none';document.getElementById('hero-initials').style.display='flex';">
+        <div class="hero-initials" id="hero-initials">ZQ</div>
+      </div>
+      <div class="hero-text">
+        <h1>Zhaosen Qu</h1>
+        <p class="hero-subtitle">B.S. Electrical Engineering &amp; Materials Science<br>
+          <span class="hero-institution">Johns Hopkins University</span>
+        </p>
+        <p class="hero-tagline">Semiconductor devices &nbsp;·&nbsp; Nanofabrication &nbsp;·&nbsp; Thin-film materials</p>
+        <div class="hero-badges">
+          <span class="badge badge-jhu">JHU '28</span>
+          <span class="badge badge-ornl">Incoming ORNL RSI Intern &nbsp;·&nbsp; Summer 2026</span>
         </div>
-    </section>
-
-    <section id="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        I'm a sophomore engineering student at [University] passionate about 
-                        [your interests]. I'm currently seeking internship opportunities and 
-                        research positions in [specific areas].
-                    </p>
-                    <p>
-                        My coursework includes: [list relevant courses like Data Structures, 
-                        Thermodynamics, Circuit Analysis, etc.]
-                    </p>
-                </div>
-            </div>
+        <div class="hero-links">
+          <a href="mailto:zqu7@jhu.edu" title="Email"><i class="fas fa-envelope"></i></a>
+          <a href="https://linkedin.com/in/zmqu" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://scholar.google.com/citations?user=ak2ocAkAAAAJ&hl=en" target="_blank" rel="noopener" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section id="projects">
-        <div class="container">
-            <h2>Projects</h2>
-            <div class="projects-grid">
-                
-                <div class="project-card">
-                    <h3>Project Name 1</h3>
-                    <p class="project-tech">Technologies: Python, Arduino, etc.</p>
-                    <p>Brief description of what this project does and what problem it solves.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/yourusername/project1" target="_blank">GitHub</a>
-                        <a href="#">Demo</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <h3>Project Name 2</h3>
-                    <p class="project-tech">Technologies: C++, MATLAB, etc.</p>
-                    <p>Brief description of what this project does and what problem it solves.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/yourusername/project2" target="_blank">GitHub</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <h3>Project Name 3</h3>
-                    <p class="project-tech">Technologies: Java, SQL, etc.</p>
-                    <p>Brief description of what this project does and what problem it solves.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/yourusername/project3" target="_blank">GitHub</a>
-                    </div>
-                </div>
-
-            </div>
+  <!-- ─── About ──────────────────────────────────────────────────────────── -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I am a sophomore at <strong>Johns Hopkins University</strong> pursuing a B.S. in
+            <strong>Electrical Engineering</strong> and <strong>Materials Science &amp; Engineering</strong>
+            (GPA: 3.98 / 4.00), with minors in Mathematics and Energy.
+            My research sits at the intersection of semiconductor device physics, nanofabrication,
+            and advanced materials characterization.
+          </p>
+          <p>
+            My work spans ferroelectric memory scaling, copper thin-film metallurgy, and
+            next-generation nitride photonics. I have fabricated devices in Class 100 cleanroom
+            environments and characterized materials using SEM/EBSD, XRD, and AFM.
+            This summer I will join the <strong>Center for Nanophase Materials Sciences</strong> at
+            <strong>Oak Ridge National Laboratory (ORNL)</strong> to grow doped AlN thin films for
+            integrated photonic and electronic applications.
+          </p>
+          <p>
+            Outside the lab, I serve as a teaching assistant for Linear Algebra and
+            Intermediate Programming, and I enjoy mentoring fellow undergraduates.
+          </p>
         </div>
-    </section>
-
-    <section id="skills">
-        <div class="container">
-            <h2>Skills & Technologies</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Programming Languages</h3>
-                    <ul>
-                        <li>Python</li>
-                        <li>Java</li>
-                        <li>C/C++</li>
-                        <li>MATLAB</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Tools & Technologies</h3>
-                    <ul>
-                        <li>Git/GitHub</li>
-                        <li>Linux</li>
-                        <li>SolidWorks/CAD</li>
-                        <li>Arduino</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Areas of Interest</h3>
-                    <ul>
-                        <li>Robotics</li>
-                        <li>Machine Learning</li>
-                        <li>Embedded Systems</li>
-                        <li>Renewable Energy</li>
-                    </ul>
-                </div>
+        <div class="about-card-col">
+          <div class="info-card">
+            <h3><i class="fas fa-university"></i> Education</h3>
+            <div class="edu-item">
+              <strong>Johns Hopkins University</strong>
+              <span class="edu-degree">B.S. Electrical Engineering &amp;<br>Materials Science &amp; Engineering</span>
+              <span class="edu-meta">Expected May 2028 &nbsp;·&nbsp; GPA 3.98 / 4.00</span>
+              <span class="edu-minor">Minors: Mathematics, Energy</span>
             </div>
+          </div>
+          <div class="info-card">
+            <h3><i class="fas fa-map-marker-alt"></i> Location</h3>
+            <p>Baltimore, MD</p>
+          </div>
+          <div class="info-card">
+            <h3><i class="fas fa-flask"></i> Research Interests</h3>
+            <ul class="interest-list">
+              <li>Semiconductor Nanofabrication</li>
+              <li>Ferroelectric &amp; Memory Devices</li>
+              <li>Wide-Bandgap Nitrides (AlN, AlScN)</li>
+              <li>Thin-Film Metallurgy</li>
+              <li>Integrated Photonics</li>
+            </ul>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section id="contact">
-        <div class="container">
-            <h2>Get In Touch</h2>
-            <div class="contact-content">
-                <p>I'm currently seeking internship opportunities for Summer 2025. Feel free to reach out!</p>
-                <div class="contact-links">
-                    <a href="mailto:your.email@example.com" class="contact-link">
-                        <span>📧</span> Email
-                    </a>
-                    <a href="https://linkedin.com/in/yourprofile" target="_blank" class="contact-link">
-                        <span>💼</span> LinkedIn
-                    </a>
-                    <a href="https://github.com/yourusername" target="_blank" class="contact-link">
-                        <span>💻</span> GitHub
-                    </a>
-                </div>
+  <!-- ─── Research / Experience ──────────────────────────────────────────── -->
+  <section id="research" class="section-alt">
+    <div class="container">
+      <h2 class="section-title">Research &amp; Experience</h2>
+      <div class="timeline">
+
+        <!-- ORNL -->
+        <div class="tl-item">
+          <div class="tl-dot tl-dot-accent"></div>
+          <div class="tl-content">
+            <div class="tl-header">
+              <div>
+                <h3>Research Student Intern <span class="tl-upcoming">Upcoming</span></h3>
+                <p class="tl-org">Oak Ridge National Laboratory &nbsp;·&nbsp; Center for Nanophase Materials Sciences</p>
+                <p class="tl-loc"><i class="fas fa-map-marker-alt"></i> Oak Ridge, TN &nbsp;·&nbsp; Mentor: Kyle Kelley</p>
+              </div>
+              <span class="tl-date">May – Aug 2026</span>
             </div>
+            <p class="tl-desc">
+              Synthesis and characterization of doped aluminum nitride (AlN) thin films for
+              next-generation photonic and electronic applications. The project focuses on
+              controlled thin-film growth with targeted dopants to tune structural, optical,
+              and functional properties relevant to integrated photonic devices.
+            </p>
+            <div class="tl-tags">
+              <span>AlN Thin Films</span><span>Wide-Bandgap Nitrides</span>
+              <span>Integrated Photonics</span><span>Materials Characterization</span>
+            </div>
+          </div>
         </div>
-    </section>
 
-    <footer>
-        <p>&copy; 2024 Your Name. All rights reserved.</p>
-    </footer>
+        <!-- UPenn REU -->
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-header">
+              <div>
+                <h3>NSF REU Nanofabrication Research Intern</h3>
+                <p class="tl-org">Device Research and Engineering Laboratory &nbsp;·&nbsp; University of Pennsylvania</p>
+                <p class="tl-loc"><i class="fas fa-map-marker-alt"></i> Philadelphia, PA &nbsp;·&nbsp; PI: Prof. Deep Jariwala</p>
+              </div>
+              <span class="tl-date">May – Aug 2025</span>
+            </div>
+            <p class="tl-desc">
+              Scaled ferroelectric diode non-volatile memory devices from 200 µm down to
+              40 nm — a 5,000× reduction — in a Class 100 cleanroom.
+              Fabricated devices using physical vapor deposition (PVD), photolithography,
+              and reactive ion etching (RIE), achieving a <strong>20% reduction in coercive field</strong>
+              and <strong>10× decrease in leakage current</strong>.
+              Work resulted in a co-authored publication in <em>Nano Letters</em>.
+            </p>
+            <div class="tl-tags">
+              <span>AlScN Ferroelectric</span><span>Photolithography</span>
+              <span>RIE</span><span>PVD</span><span>Class 100 Cleanroom</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Weihs Group -->
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-header">
+              <div>
+                <h3>Undergraduate Research Assistant</h3>
+                <p class="tl-org">Weihs Group &nbsp;·&nbsp; Johns Hopkins University</p>
+                <p class="tl-loc"><i class="fas fa-map-marker-alt"></i> Baltimore, MD &nbsp;·&nbsp; PI: Prof. Tim P. Weihs</p>
+              </div>
+              <span class="tl-date">Dec 2024 – Present</span>
+            </div>
+            <p class="tl-desc">
+              Investigating metallurgical properties of Cu, CuTi, Al, and Ti alloys.
+              Characterize microstructure using SEM, EBSD, XRD, and Vickers microhardness analysis.
+              Prepare high-quality specimens via wire EDM and annealing protocols.
+              Contributed to a co-authored publication in <em>Materials Science and Engineering: A</em>.
+            </p>
+            <div class="tl-tags">
+              <span>SEM / EBSD</span><span>XRD</span><span>Metallurgy</span>
+              <span>Cu Thin Films</span><span>Wire EDM</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Caltech -->
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-header">
+              <div>
+                <h3>Electrical Engineer Intern</h3>
+                <p class="tl-org">Space Radiation Lab &nbsp;·&nbsp; California Institute of Technology</p>
+                <p class="tl-loc"><i class="fas fa-map-marker-alt"></i> Pasadena, CA</p>
+              </div>
+              <span class="tl-date">Jun – Jul 2023</span>
+            </div>
+            <p class="tl-desc">
+              Diagnosed and repaired overstressed components in the SPHEREx space telescope assembly.
+              Performed stress-testing, designed optical calibration components in SOLIDWORKS,
+              and managed Bill of Materials (BOM) revisions.
+            </p>
+            <div class="tl-tags">
+              <span>SPHEREx</span><span>Stress Testing</span>
+              <span>SOLIDWORKS</span><span>Space Instrumentation</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Publications ──────────────────────────────────────────────────── -->
+  <section id="publications">
+    <div class="container">
+      <h2 class="section-title">Publications</h2>
+      <p class="section-sub">
+        <a href="https://scholar.google.com/citations?user=ak2ocAkAAAAJ&hl=en" target="_blank" rel="noopener" class="scholar-link">
+          <i class="fas fa-graduation-cap"></i> View Google Scholar Profile
+        </a>
+      </p>
+
+      <div class="pub-list">
+
+        <div class="pub-item">
+          <div class="pub-number">2</div>
+          <div class="pub-body">
+            <p class="pub-title">
+              Demonstration of highly scaled AlScN ferroelectric diode memory with a storage
+              density of 100 Mbit/mm²
+            </p>
+            <p class="pub-authors">
+              Z. Hu, H. Cho, R. K. Rai, K. Bao, Y. Zhang, <strong>Z. Qu</strong>, Y. He, Y. Ji,
+              C. Leblanc, K.-H. Kim, Z. Han, Z. Qiu, X. Du, E. A. Stach, R. Olsson, and D. Jariwala
+            </p>
+            <p class="pub-venue">
+              <em>Nano Letters</em>, vol. 25, no. 37, pp. 13748–13755, 2025
+            </p>
+            <div class="pub-links">
+              <a href="https://doi.org/10.1021/acs.nanolett.5c02961" target="_blank" rel="noopener" class="pub-link">
+                <i class="fas fa-external-link-alt"></i> DOI
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-number">1</div>
+          <div class="pub-body">
+            <p class="pub-title">
+              Revealing bulk-like properties in freestanding PVD copper foils
+            </p>
+            <p class="pub-authors">
+              R. Berlia, C. Singh, <strong>Z. Qu</strong>, R. T. Mehta, and T. P. Weihs
+            </p>
+            <p class="pub-venue">
+              <em>Materials Science and Engineering: A</em>, vol. 947, p. 149163, 2025
+            </p>
+            <div class="pub-links">
+              <a href="https://doi.org/10.1016/j.msea.2025.149163" target="_blank" rel="noopener" class="pub-link">
+                <i class="fas fa-external-link-alt"></i> DOI
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Teaching ──────────────────────────────────────────────────────── -->
+  <section id="teaching" class="section-alt">
+    <div class="container">
+      <h2 class="section-title">Teaching</h2>
+      <p class="section-lead">
+        Undergraduate Teaching Assistant &amp; Course/Learning Assistant at Johns Hopkins University.
+      </p>
+      <div class="teaching-grid">
+
+        <div class="teaching-card">
+          <div class="teaching-term">Spring 2026</div>
+          <ul>
+            <li><span class="ta-role">Teaching Assistant</span> — Linear Algebra</li>
+            <li><span class="ta-role">Course Assistant</span> — Intermediate Programming</li>
+          </ul>
+        </div>
+
+        <div class="teaching-card">
+          <div class="teaching-term">Fall 2025</div>
+          <ul>
+            <li><span class="ta-role">Teaching Assistant</span> — Linear Algebra</li>
+            <li><span class="ta-role">Course Assistant</span> — Intermediate Programming</li>
+          </ul>
+        </div>
+
+        <div class="teaching-card">
+          <div class="teaching-term">Spring 2025</div>
+          <ul>
+            <li><span class="ta-role">Course Assistant</span> — Calculus 2 (Engineering)</li>
+            <li><span class="ta-role">Learning Assistant</span> — Physics 2 (Engineering)</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Skills ────────────────────────────────────────────────────────── -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-grid">
+
+        <div class="skill-group">
+          <h3><i class="fas fa-microchip"></i> Semiconductor Processing</h3>
+          <div class="skill-tags">
+            <span>Photolithography</span>
+            <span>Reactive Ion Etching (RIE)</span>
+            <span>Physical Vapor Deposition (PVD)</span>
+            <span>Chemical Vapor Deposition (CVD)</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3><i class="fas fa-microscope"></i> Metrology &amp; Characterization</h3>
+          <div class="skill-tags">
+            <span>Atomic Force Microscopy (AFM)</span>
+            <span>Scanning Electron Microscopy (SEM)</span>
+            <span>EBSD</span>
+            <span>Powder X-ray Diffraction (XRD)</span>
+            <span>Keithley</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3><i class="fas fa-bolt"></i> Electronics &amp; EDA</h3>
+          <div class="skill-tags">
+            <span>Altium Designer</span>
+            <span>Cadence</span>
+            <span>Vivado</span>
+            <span>LTspice</span>
+            <span>SystemVerilog / FPGA</span>
+            <span>Oscilloscope</span>
+            <span>Digital Multimeter</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3><i class="fas fa-code"></i> Programming</h3>
+          <div class="skill-tags">
+            <span>Python</span>
+            <span>C</span>
+            <span>C++</span>
+            <span>MATLAB</span>
+            <span>Java</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Contact ───────────────────────────────────────────────────────── -->
+  <section id="contact" class="section-alt">
+    <div class="container contact-inner">
+      <h2 class="section-title">Contact</h2>
+      <p class="contact-blurb">
+        I'm always happy to discuss research, collaborations, or opportunities.
+        Feel free to reach out.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:zqu7@jhu.edu" class="contact-card">
+          <i class="fas fa-envelope"></i>
+          <span>zqu7@jhu.edu</span>
+        </a>
+        <a href="https://linkedin.com/in/zmqu" target="_blank" rel="noopener" class="contact-card">
+          <i class="fab fa-linkedin"></i>
+          <span>linkedin.com/in/zmqu</span>
+        </a>
+        <a href="https://scholar.google.com/citations?user=ak2ocAkAAAAJ&hl=en" target="_blank" rel="noopener" class="contact-card">
+          <i class="fas fa-graduation-cap"></i>
+          <span>Google Scholar</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Footer ────────────────────────────────────────────────────────── -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Zhaosen Qu &nbsp;·&nbsp; Johns Hopkins University</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
