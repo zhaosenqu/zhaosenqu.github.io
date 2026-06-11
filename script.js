@@ -7,12 +7,26 @@ window.addEventListener('scroll', () => {
 // Mobile nav toggle
 const navToggle = document.getElementById('navToggle');
 const navLinks  = document.getElementById('navLinks');
+
+function setMenu(open) {
+  navLinks.classList.toggle('open', open);
+  navToggle.setAttribute('aria-expanded', String(open));
+}
+
 navToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('open');
+  setMenu(!navLinks.classList.contains('open'));
 });
 
 navLinks.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => navLinks.classList.remove('open'));
+  link.addEventListener('click', () => setMenu(false));
+});
+
+// Close the mobile menu on Escape
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && navLinks.classList.contains('open')) {
+    setMenu(false);
+    navToggle.focus();
+  }
 });
 
 // Active nav link on scroll
