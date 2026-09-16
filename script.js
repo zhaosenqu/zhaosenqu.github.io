@@ -6,6 +6,7 @@ function setMenu(open) {
   navLinks.classList.toggle('open', open);
   navToggle.setAttribute('aria-expanded', String(open));
   navToggle.querySelector('.sr-only').textContent = open ? 'Close navigation' : 'Open navigation';
+  navToggle.querySelector('[aria-hidden="true"]').textContent = open ? 'Close' : 'Menu';
 }
 
 navToggle.addEventListener('click', () => setMenu(!navLinks.classList.contains('open')));
