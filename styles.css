@@ -227,6 +227,12 @@ section { padding: 56px 0; background: var(--white); }
 }
 .pub-list + .subsection-title { margin-top: 2.5rem; }
 .pub-note { font-size: 0.82rem; color: var(--muted); }
+.pub-status {
+  display: inline-block; font-size: 0.68rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.05em;
+  background: var(--blue-bg); color: var(--accent);
+  padding: 1px 7px; border-radius: 3px; font-style: normal;
+}
 .pub-list { display: flex; flex-direction: column; gap: 1.5rem; }
 .pub-item {
   display: flex; gap: 1rem; align-items: flex-start;
