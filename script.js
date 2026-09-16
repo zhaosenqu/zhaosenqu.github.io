@@ -1,46 +1,40 @@
-// Navbar scroll shadow
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 40);
-});
-
-// Mobile nav toggle
 const navToggle = document.getElementById('navToggle');
-const navLinks  = document.getElementById('navLinks');
+const navLinks = document.getElementById('navLinks');
+const navAnchors = [...navLinks.querySelectorAll('a[href^="#"]')];
 
 function setMenu(open) {
   navLinks.classList.toggle('open', open);
   navToggle.setAttribute('aria-expanded', String(open));
+  navToggle.querySelector('.sr-only').textContent = open ? 'Close navigation' : 'Open navigation';
 }
 
-navToggle.addEventListener('click', () => {
-  setMenu(!navLinks.classList.contains('open'));
-});
+navToggle.addEventListener('click', () => setMenu(!navLinks.classList.contains('open')));
+navAnchors.forEach((link) => link.addEventListener('click', () => setMenu(false)));
 
-navLinks.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => setMenu(false));
-});
-
-// Close the mobile menu on Escape
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape' && navLinks.classList.contains('open')) {
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && navLinks.classList.contains('open')) {
     setMenu(false);
     navToggle.focus();
   }
 });
 
-// Active nav link on scroll
-const sections = document.querySelectorAll('section[id]');
-const navItems = document.querySelectorAll('.nav-links a');
+const sections = [...document.querySelectorAll('main section[id]')];
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver((entries) => {
+    const visible = entries
+      .filter((entry) => entry.isIntersecting)
+      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
 
-const activeObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      navItems.forEach(a => {
-        a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id);
-      });
-    }
-  });
-}, { rootMargin: '-40% 0px -55% 0px' });
+    if (!visible) return;
+    navAnchors.forEach((link) => {
+      const active = link.getAttribute('href') === `#${visible.target.id}`;
+      link.classList.toggle('active', active);
+      if (active) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
+    });
+  }, { rootMargin: '-25% 0px -60% 0px', threshold: [0, 0.1, 0.4] });
 
-sections.forEach(s => activeObserver.observe(s));
+  sections.forEach((section) => observer.observe(section));
+}
+
+document.getElementById('year').textContent = new Date().getFullYear();
