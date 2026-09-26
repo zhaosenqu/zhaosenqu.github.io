@@ -3,11 +3,40 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://zhaosenqu.github.io/</loc>
-    <lastmod>2026-09-16</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://zhaosenqu.github.io/assets/profile.jpg</image:loc>
-      <image:title>Portrait of Zhaosen Qu</image:title>
     </image:image>
+  </url>
+  <url>
+    <loc>https://zhaosenqu.github.io/about.html</loc>
+    <lastmod>2026-09-26</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zhaosenqu.github.io/research.html</loc>
+    <lastmod>2026-09-26</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://zhaosenqu.github.io/publications.html</loc>
+    <lastmod>2026-09-26</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://zhaosenqu.github.io/skills.html</loc>
+    <lastmod>2026-09-26</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://zhaosenqu.github.io/contact.html</loc>
+    <lastmod>2026-09-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://zhaosenqu.github.io/assets/gradCV_Qu.pdf</loc>
+    <lastmod>2026-09-26</lastmod>
+    <priority>0.7</priority>
   </url>
 </urlset>
