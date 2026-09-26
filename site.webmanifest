@@ -1,0 +1,13 @@
+{
+  "name": "Zhaosen Qu",
+  "short_name": "Zhaosen Qu",
+  "description": "Research profile of Zhaosen Qu, Electrical Engineering, Johns Hopkins University",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#fbfbf9",
+  "theme_color": "#1c3f6e",
+  "icons": [
+    { "src": "/assets/favicon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/assets/logo-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
