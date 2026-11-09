@@ -2,8 +2,6 @@
 
 Personal academic website of Zhaosen Qu, served by GitHub Pages at <https://zhaosenqu.github.io/>.
 
-Plain HTML and CSS with no build step and no JavaScript.
-
 | File | Page |
 | --- | --- |
 | `index.html` | Home |
