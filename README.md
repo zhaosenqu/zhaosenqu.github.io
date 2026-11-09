@@ -15,5 +15,3 @@ Personal academic website of Zhaosen Qu, served by GitHub Pages at <https://zhao
 | `assets/gradCV_Qu.pdf` | CV |
 | `favicon.ico`, `assets/favicon-*.png`, `assets/apple-touch-icon.png`, `assets/logo-*.png` | ZQ monogram logo and icons |
 | `site.webmanifest` | App name and icons |
-
-Preview locally with `python3 -m http.server` and open <http://localhost:8000>.
